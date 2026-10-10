@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Briefly AI</title>
+<link rel="stylesheet" href="css/style.css"></head><body>
+<header><span class="brand">Briefly<i>.</i>AI</span><span class="mut">Faster revision, original always one click away</span></header>
+<main>
+<h1>Turn any chapter into notes you can study.</h1>
+<p class="lead">Paste text, pick a length, level and language. Summaries aim to help understanding and can contain mistakes, so always check the original.</p>
+<div class="grid">
+ <section class="card in" aria-label="Input">
+  <div class="row"><span class="mut">Try a sample:</span><button id="s0">Science</button><button id="s1">History</button><button id="s2">Maths</button></div>
+  <textarea id="src" aria-label="Text to summarize" placeholder="Paste your study text here (up to ~4,000 words)…"></textarea>
+  <div class="row">
+   <label>Length <select id="len"><option value="one line">One line</option><option value="short" selected>Short</option><option value="detailed">Detailed</option></select></label>
+   <label>Level <select id="lvl"><option>Class 6</option><option selected>Class 10</option><option>College</option></select></label>
+   <label>Language <select id="lang"><option>English</option><option>Telugu</option><option>Hindi</option></select></label>
+  </div>
+  <div class="row"><button class="pri" id="go">Summarize</button><span id="st" class="mut" role="status"></span></div>
+  <p class="mut">Your text is sent to Claude to create the summary and is not stored on a server. History stays in this browser only.</p>
+ </section>
+ <section class="card" aria-label="Result" id="out"><p class="mut">Your summary, key points, key terms and revision questions will appear here.</p></section>
+</div>
+<section class="card" id="askbox" style="margin-top:16px"><h3 style="margin-top:0">Personal AI agent</h3>
+ <p class="mut">Ask anything. If text is pasted above, answers are marked as coming from the text or from general knowledge.</p>
+ <div id="chat" aria-live="polite"></div>
+ <div class="row"><input type="text" id="q" aria-label="Your question" placeholder="e.g. Explain this in simple words" style="flex:1;min-width:180px"><button id="ask">Ask</button></div>
+</section>
+<section class="card" style="margin-top:16px"><h3 style="margin-top:0">My documents</h3><p class="mut">Saved in this browser only (localStorage). Nothing is stored on a server.</p><div class="tw"><table><thead><tr><th>Image</th><th>Title</th><th>Date</th><th>Options</th><th>Summary</th><th></th></tr></thead><tbody id="rows"></tbody></table></div></section>
+</main>
+<script src="js/main.js"></script>
+</body></html>
